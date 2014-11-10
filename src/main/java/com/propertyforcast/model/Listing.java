@@ -25,6 +25,7 @@ public class Listing {
 	private final PriceModifier modifier;
 	private final String thumbnailUrl;
 	private final Iterable<PriceChange> priceChanges;
+	private final String searchPostcode;
 	
 	public Listing(int id, Agent agent, Country country, String county,
 			String description, String shortDescription, String detailsUrl,
@@ -33,7 +34,7 @@ public class Listing {
 			LatLng latLong, Status status, Property propertyDetails,
 			double price, PriceModifier modifier, String thumbnailUrl,
 			Iterable<PriceChange> priceChanges,
-			long extractionTime) {
+			long extractionTime, String searchPostcode) {
 		this.id = id;
 		this.agent = agent;
 		this.country = country;
@@ -53,6 +54,7 @@ public class Listing {
 		this.thumbnailUrl = thumbnailUrl;
 		this.priceChanges = priceChanges;
 		this.extractionTime = extractionTime;
+		this.searchPostcode = searchPostcode;
 	}
 	
 	public int getId() {
@@ -113,5 +115,9 @@ public class Listing {
 
 	public long getExtractionTime() {
 		return extractionTime;
+	}
+
+	public String getSearchPostcode() {
+		return searchPostcode;
 	}
 }

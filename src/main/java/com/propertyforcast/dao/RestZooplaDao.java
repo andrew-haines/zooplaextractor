@@ -61,23 +61,23 @@ public class RestZooplaDao implements ZooplaDao {
 		
 		int resultSetSize = res.getAsJsonObject().get("result_count").getAsInt();
 		
-		Iterable<Listing> listings = getListings(res.getAsJsonObject().get("listing").getAsJsonArray());
+		Iterable<Listing> listings = getListings(res.getAsJsonObject().get("listing").getAsJsonArray(), postcode);
 		
 		return new PagenatedIterable<Listing>(listings, resultSetSize, pagenationDetails);
 	}
 
-	private Iterable<Listing> getListings(JsonArray listings) {
+	private Iterable<Listing> getListings(JsonArray listings, String searchPostcode) {
 		
 		Collection<Listing> listingCollection = new ArrayList<Listing>(listings.size());
 		
 		for (JsonElement listing: listings){
-			listingCollection.add(getListing(listing.getAsJsonObject()));
+			listingCollection.add(getListing(listing.getAsJsonObject(), searchPostcode));
 		}
 		
 		return listingCollection;
 	}
 
-	private Listing getListing(JsonObject listing) {
+	private Listing getListing(JsonObject listing, String searchPostcode) {
 		
 		Property property = getProperty(listing);
 		Agent agent = getAgent(listing);
@@ -109,7 +109,7 @@ public class RestZooplaDao implements ZooplaDao {
 			
 			Iterable<PriceChange> priceChanges = getPriceChanges(listing.get("price_change").getAsJsonArray());
 		
-			return new Listing(id, agent, country, county, description, shortDescription, detailsUrl, firstPublishedDate, lastPublishedDate, imageCaption, imageUrl, latLong, status, property, price, modifier, thumbnailUrl, priceChanges, clock.getCurrentTime());
+			return new Listing(id, agent, country, county, description, shortDescription, detailsUrl, firstPublishedDate, lastPublishedDate, imageCaption, imageUrl, latLong, status, property, price, modifier, thumbnailUrl, priceChanges, clock.getCurrentTime(), searchPostcode);
 		} catch (ParseException e){
 			throw new RuntimeException("unable to parse date", e);
 		}

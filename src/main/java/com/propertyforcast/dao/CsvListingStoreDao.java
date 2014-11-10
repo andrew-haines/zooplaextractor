@@ -56,6 +56,7 @@ public class CsvListingStoreDao implements ListingStoreDao{
 	            	printer.print(listing.getShortDescription());
 	            	printer.print(listing.getThumbnailUrl());
 	            	printer.print(listing.getStatus());
+	            	printer.print(listing.getSearchPostcode());
 	            	printer.print(Util.DATE_FORMAT_INSTANCE.format(listing.getFirstPublishedDate()));
 	            	printer.print(Util.DATE_FORMAT_INSTANCE.format(listing.getLastPublishedDate()));
 	            	printer.print(listing.getExtractionTime());
