@@ -8,5 +8,5 @@ import com.propertyforcast.model.PaginationDetails;
 
 public interface ZooplaDao {
 
-	public PagenatedIterable<Listing> getListings(String postcode, double radius, PaginationDetails pagenationDetails) throws IOException;
+	public PagenatedIterable<Listing> getListings(String postcode, double radius, PaginationDetails pagenationDetails) throws IOException, ZooplaDaoException;
 }

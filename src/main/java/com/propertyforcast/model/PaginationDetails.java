@@ -17,4 +17,9 @@ public class PaginationDetails {
 	public int getPageSize() {
 		return pageSize;
 	}
+	
+	@Override
+	public String toString(){
+		return "{pageNum: "+pageNum+", pageSize: "+pageSize+"}";
+	}
 }

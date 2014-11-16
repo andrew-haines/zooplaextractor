@@ -2,10 +2,10 @@ package com.propertyforcast.model;
 
 public enum PropertyType {
 
-	TERRACED("Terraced"),
-	END_OF_TERRACE("End of terrace"),
-	SEMI_DETACHED("Semi-detached"),
-	DETACHED("Detached"),
+	TERRACED("Terraced house"),
+	END_OF_TERRACE("End terrace house"),
+	SEMI_DETACHED("Semi-detached house"),
+	DETACHED("Detached house"),
 	MEWS_HOUSE("Mews house"),
 	FLAT("flat"),
 	MAISONETTE("Maisonette"),
@@ -17,6 +17,7 @@ public enum PropertyType {
 	LAND("Land"),
 	STUDIO("Studio"),
 	BLOCK_OF_FLATS("Block of flats"),
+	PARKING_GARAGE("Parking/garage"),
 	OFFICE("Office");
 	
 	private final String typeId;
