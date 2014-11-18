@@ -14,10 +14,14 @@ public enum PropertyType {
 	COTTAGE("Cottage"),
 	FARM_BARN("Farm/Barn"),
 	MOBILE_STATIC("Mobile/static"),
+	MOBILE_PARK_HOME("Mobile/park home"),
+	BARN_FARM_HOUSE("Barn conversion/farmhouse"),
+	LINKED_DETACHED_HOUSE("Link-detached house"),
 	LAND("Land"),
 	STUDIO("Studio"),
 	BLOCK_OF_FLATS("Block of flats"),
 	PARKING_GARAGE("Parking/garage"),
+	HOUSE_BOAT("Houseboat"),
 	OFFICE("Office");
 	
 	private final String typeId;

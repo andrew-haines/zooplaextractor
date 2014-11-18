@@ -127,7 +127,7 @@ public class ZooplaExtractor {
 		}
 
 		private long getRandomWaitTime() {
-			return (long)(Math.random() * (MILLISECONDS_IN_HOUR / maxRequestsInHour));
+			return (long)(Math.random() * (MILLISECONDS_IN_HOUR / maxRequestsInHour)) * 2;
 		}
 	}
 }

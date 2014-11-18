@@ -48,8 +48,13 @@ public class CsvListingStoreDao implements ListingStoreDao{
             	
             	for (PriceChange price: Iterables.concat(Arrays.asList(new PriceChange(latestPriceDate, listing.getPrice())), listing.getPriceChanges())){
 	            	printer.print(listing.getId());
-	            	printer.print(listing.getLatLong().getLatitude());
-	            	printer.print(listing.getLatLong().getLongitude());
+	            	if (listing.getLatLong() != null){
+	            		printer.print(listing.getLatLong().getLatitude());
+	            		printer.print(listing.getLatLong().getLongitude());
+	            	} else{
+	            		printer.print(null);
+	            		printer.print(null);
+	            	}
 	            	if (listing.getCountry() != null){
 	            		printer.print(listing.getCountry().name());
 	            	} else{

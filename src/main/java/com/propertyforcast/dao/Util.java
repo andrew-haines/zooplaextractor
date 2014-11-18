@@ -5,5 +5,5 @@ import java.text.SimpleDateFormat;
 
 public interface Util {
 
-	public final static DateFormat DATE_FORMAT_INSTANCE = new SimpleDateFormat("YYYY-MM-DD HH:mm:ss");
+	public final static DateFormat DATE_FORMAT_INSTANCE = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 }

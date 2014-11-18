@@ -128,7 +128,11 @@ public class RestZooplaDao implements ZooplaDao {
 		
 			Status status = Status.forString(getStringIfSet(listing, "status"));
 		
-			LatLng latLong = new LatLng(listing.get("latitude").getAsDouble(), listing.get("longitude").getAsDouble());
+			LatLng latLong = null;
+			
+			if (!listing.get("latitude").isJsonNull() && !listing.get("longitude").isJsonNull()){
+				latLong = new LatLng(listing.get("latitude").getAsDouble(), listing.get("longitude").getAsDouble());
+			}
 		
 			double price = listing.get("price").getAsDouble();
 			

@@ -37,7 +37,7 @@ public class ExistingListingPredicateProvider implements Provider<Predicate<List
 			
 			final Set<String> listingIds = new HashSet<String>();
 			for (CSVRecord record: parser){
-				listingIds.add(Integer.parseInt(record.get(0)) +"#"+record.get(32));
+				listingIds.add(Integer.parseInt(record.get(0)) +"#"+record.get(32)+"#"+record.get(26));
 			}
 			
 			LOG.debug("Filtering: {} listings", listingIds.size());
@@ -46,7 +46,7 @@ public class ExistingListingPredicateProvider implements Provider<Predicate<List
 
 				@Override
 				public boolean apply(Listing input) {
-					return !listingIds.contains(input.getId()+"#"+input.getPrice());
+					return !listingIds.contains(input.getId()+"#"+input.getPrice()+"#"+input.getStatus());
 				}
 				
 			};
