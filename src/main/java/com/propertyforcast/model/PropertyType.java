@@ -22,6 +22,8 @@ public enum PropertyType {
 	BLOCK_OF_FLATS("Block of flats"),
 	PARKING_GARAGE("Parking/garage"),
 	HOUSE_BOAT("Houseboat"),
+	FARM("Farm"),
+	FARMHOUSE("Farmhouse"),
 	OFFICE("Office");
 	
 	private final String typeId;
